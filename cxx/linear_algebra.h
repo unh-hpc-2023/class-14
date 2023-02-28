@@ -34,7 +34,6 @@ class matrix
 {
 public:
   matrix(int n_rows, int n_cols);
-  ~matrix();
 
   int n_rows() const { return n_rows_; }
   int n_cols() const { return n_cols_; }
@@ -47,7 +46,7 @@ public:
   void print() const;
 
 private:
-  double* data_;
+  std::vector<double> data_;
   int n_rows_;
   int n_cols_;
 };
