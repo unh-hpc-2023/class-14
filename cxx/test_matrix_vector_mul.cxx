@@ -12,7 +12,7 @@
 int main(int argc, char** argv)
 {
   const int N = 3;
-  vector x(N), y(N), y_ref(N);
+  vector x(N), y_ref(N);
 
   for (int i = 0; i < x.size(); i++) {
     x(i) = 1 + i;
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
   A(0, 1) = 1.;  // add one non-zero off-diagonal element
   y_ref(0) += 2; // adjust reference solution correspondingly
 
-  matrix_vector_mul(A, x, y);
+  vector y = matrix_vector_mul(A, x);
   assert(y == y_ref);
 
   return 0;

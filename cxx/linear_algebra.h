@@ -51,6 +51,6 @@ private:
   int n_cols_;
 };
 
-void matrix_vector_mul(const matrix& A, const vector& x, vector& y);
+vector matrix_vector_mul(const matrix& A, const vector& x);
 
 #endif
