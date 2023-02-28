@@ -9,8 +9,9 @@
 // encapsulates what makes up a vector -- how many elements it contains (n), as
 // well as the actual elements data[0] ... data[n-1]
 
-struct vector
+class vector
 {
+public:
   vector(int n);
   ~vector();
 
@@ -20,6 +21,7 @@ struct vector
 
   void print() const;
 
+private:
   double* data;
   int n;
 };
