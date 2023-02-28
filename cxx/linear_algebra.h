@@ -3,6 +3,7 @@
 #define LINEAR_ALGEBRA_H
 
 #include <stdbool.h>
+#include <vector>
 
 // vector
 //
@@ -13,17 +14,15 @@ class vector
 {
 public:
   vector(int n);
-  ~vector();
 
-  int size() const { return n_; }
+  int size() const { return data_.size(); }
   double& operator()(int i) { return data_[i]; }
   const double& operator()(int i) const { return data_[i]; }
 
   void print() const;
 
 private:
-  double* data_;
-  int n_;
+  std::vector<double> data_;
 };
 
 bool operator==(const vector& x, const vector& y);
@@ -31,8 +30,9 @@ bool operator==(const vector& x, const vector& y);
 double vector_dot(const vector& x, const vector& y);
 void vector_add(const vector& x, const vector& y, vector& z);
 
-struct matrix
+class matrix
 {
+public:
   matrix(int n_rows, int n_cols);
   ~matrix();
 
@@ -46,6 +46,7 @@ struct matrix
 
   void print() const;
 
+private:
   double* data_;
   int n_rows_;
   int n_cols_;

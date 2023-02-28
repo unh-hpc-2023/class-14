@@ -3,15 +3,7 @@
 
 #include <stdio.h>
 
-vector::vector(int n) : data_(new double[n]), n_(n) {}
-
-vector::~vector()
-{
-  delete[] data_;
-  // The below isn't necessary, but may help make certain bugs more obvious.
-  // data = NULL;
-  // n = 0;
-}
+vector::vector(int n) : data_(n) {}
 
 void vector::print() const
 {
