@@ -27,7 +27,7 @@ private:
 
 bool operator==(const vector& x, const vector& y);
 
-double vector_dot(const vector& x, const vector& y);
+double dot(const vector& x, const vector& y);
 vector operator+(const vector& x, const vector& y);
 
 class matrix
@@ -51,6 +51,6 @@ private:
   int n_cols_;
 };
 
-vector matrix_vector_mul(const matrix& A, const vector& x);
+vector dot(const matrix& A, const vector& x);
 
 #endif

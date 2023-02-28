@@ -3,7 +3,7 @@
 
 #include <assert.h>
 
-vector matrix_vector_mul(const matrix& A, const vector& x)
+vector dot(const matrix& A, const vector& x)
 {
   assert(A.n_cols() == x.size());
   vector y(A.n_rows());

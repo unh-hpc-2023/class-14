@@ -26,7 +26,7 @@ int main(int argc, char** argv)
   A(0, 1) = 1.;  // add one non-zero off-diagonal element
   y_ref(0) += 2; // adjust reference solution correspondingly
 
-  vector y = matrix_vector_mul(A, x);
+  vector y = dot(A, x);
   assert(y == y_ref);
 
   return 0;
