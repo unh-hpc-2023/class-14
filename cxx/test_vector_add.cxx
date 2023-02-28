@@ -19,7 +19,7 @@ void test_vector_add(int N)
     z_ref(i) = 3 + 2 * i;
   }
 
-  vector z = vector_add(x, y);
+  vector z = x + y;
   assert(z == z_ref);
 }
 

@@ -28,7 +28,7 @@ private:
 bool operator==(const vector& x, const vector& y);
 
 double vector_dot(const vector& x, const vector& y);
-vector vector_add(const vector& x, const vector& y);
+vector operator+(const vector& x, const vector& y);
 
 class matrix
 {
