@@ -14,7 +14,7 @@ int main(int argc, char** argv)
   const int N = 3;
   vector x(N), y(N), y_ref(N);
 
-  for (int i = 0; i < x.n; i++) {
+  for (int i = 0; i < x.size(); i++) {
     x(i) = 1 + i;
   }
   matrix A(N, N);

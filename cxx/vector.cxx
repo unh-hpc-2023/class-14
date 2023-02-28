@@ -24,10 +24,10 @@ void vector::print() const
 
 bool operator==(const vector& x, const vector& y)
 {
-  if (x.n != y.n) {
+  if (x.size() != y.size()) {
     return false;
   }
-  for (int i = 0; i < x.n; i++) {
+  for (int i = 0; i < x.size(); i++) {
     if (x(i) != y(i)) {
       return false;
     }

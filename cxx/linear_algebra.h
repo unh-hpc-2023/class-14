@@ -14,6 +14,7 @@ struct vector
   vector(int n);
   ~vector();
 
+  int size() const { return n; }
   double& operator()(int i) { return data[i]; }
   const double& operator()(int i) const { return data[i]; }
 

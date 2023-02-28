@@ -5,11 +5,11 @@
 
 void matrix_vector_mul(const matrix& A, const vector& x, vector& y)
 {
-  assert(A.n_cols == x.n && A.n_rows == y.n);
+  assert(A.n_cols == x.size() && A.n_rows == y.size());
 
-  for (int j = 0; j < y.n; j++) {
+  for (int j = 0; j < y.size(); j++) {
     y(j) = 0.;
-    for (int i = 0; i < x.n; i++) {
+    for (int i = 0; i < x.size(); i++) {
       y(j) += A(j, i) * x(i);
     }
   }
