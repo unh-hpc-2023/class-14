@@ -14,9 +14,9 @@ void test_vector_add(int N)
   vector x(N), y(N), z(N), z_ref(N);
 
   for (int i = 0; i < N; i++) {
-    VEC(x, i) = 1 + i;
-    VEC(y, i) = 2 + i;
-    VEC(z_ref, i) = 3 + 2 * i;
+    x.at(i) = 1 + i;
+    y.at(i) = 2 + i;
+    z_ref.at(i) = 3 + 2 * i;
   }
 
   vector_add(x, y, z);

@@ -17,7 +17,7 @@ void vector_print(const vector& v)
 {
   printf("{ ");
   for (int i = 0; i < v.n; i++) {
-    printf("%g, ", VEC(v, i));
+    printf("%g, ", v.at(i));
   }
   printf("}\n");
 }
@@ -28,7 +28,7 @@ bool vector_is_equal(const vector& x, const vector& y)
     return false;
   }
   for (int i = 0; i < x.n; i++) {
-    if (VEC(x, i) != VEC(y, i)) {
+    if (x.at(i) != y.at(i)) {
       return false;
     }
   }

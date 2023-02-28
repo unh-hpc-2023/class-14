@@ -14,11 +14,12 @@ struct vector
   vector(int n);
   ~vector();
 
+  double& at(int i) { return data[i]; }
+  const double& at(int i) const { return data[i]; }
+
   double* data;
   int n;
 };
-
-#define VEC(v, i) ((v).data[i])
 
 void vector_print(const vector& v);
 bool vector_is_equal(const vector& x, const vector& y);
