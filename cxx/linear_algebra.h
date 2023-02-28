@@ -36,14 +36,19 @@ struct matrix
   matrix(int n_rows, int n_cols);
   ~matrix();
 
-  double& operator()(int i, int j) { return data[i * n_cols + j]; }
-  const double& operator()(int i, int j) const { return data[i * n_cols + j]; }
+  int n_rows() const { return n_rows_; }
+  int n_cols() const { return n_cols_; }
+  double& operator()(int i, int j) { return data_[i * n_cols_ + j]; }
+  const double& operator()(int i, int j) const
+  {
+    return data_[i * n_cols_ + j];
+  }
 
   void print() const;
 
-  double* data;
-  int n_rows;
-  int n_cols;
+  double* data_;
+  int n_rows_;
+  int n_cols_;
 };
 
 void matrix_vector_mul(const matrix& A, const vector& x, vector& y);
