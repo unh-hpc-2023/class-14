@@ -24,7 +24,7 @@ void matrix::print() const
     }
     printf("{ ");
     for (int j = 0; j < n_cols; j++) {
-      printf("%g, ", MAT(*this, i, j));
+      printf("%g, ", (*this)(i, j));
     }
     printf("}\n");
   }

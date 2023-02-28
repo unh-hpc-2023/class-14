@@ -20,11 +20,11 @@ int main(int argc, char** argv)
   matrix A(N, N);
 
   for (int i = 0; i < N; i++) {
-    MAT(A, i, i) = i + 1; // set diagonal
+    A(i, i) = i + 1; // set diagonal
     y_ref(i) = (1 + i) * (1 + i);
   }
-  MAT(A, 0, 1) = 1.; // add one non-zero off-diagonal element
-  y_ref(0) += 2;     // adjust reference solution correspondingly
+  A(0, 1) = 1.;  // add one non-zero off-diagonal element
+  y_ref(0) += 2; // adjust reference solution correspondingly
 
   matrix_vector_mul(A, x, y);
   assert(y == y_ref);
