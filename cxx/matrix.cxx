@@ -14,17 +14,17 @@ matrix::~matrix()
   // A->data = NULL;
 }
 
-void matrix_print(const matrix& A)
+void matrix::print() const
 {
-  for (int i = 0; i < A.n_rows; i++) {
+  for (int i = 0; i < n_rows; i++) {
     if (i == 0) {
       printf("{ ");
     } else {
       printf("  "); // try to keep output indented somewhat nicely
     }
     printf("{ ");
-    for (int j = 0; j < A.n_cols; j++) {
-      printf("%g, ", MAT(A, i, j));
+    for (int j = 0; j < n_cols; j++) {
+      printf("%g, ", MAT(*this, i, j));
     }
     printf("}\n");
   }

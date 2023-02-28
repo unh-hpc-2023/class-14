@@ -33,14 +33,14 @@ struct matrix
   matrix(int n_rows, int n_cols);
   ~matrix();
 
+  void print() const;
+
   double* data;
   int n_rows;
   int n_cols;
 };
 
 #define MAT(A, i, j) (A).data[(i) * (A).n_cols + (j)]
-
-void matrix_print(const matrix& A);
 
 void matrix_vector_mul(const matrix& A, const vector& x, vector& y);
 
