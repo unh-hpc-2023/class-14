@@ -17,7 +17,7 @@ void vector::print() const
 {
   printf("{ ");
   for (int i = 0; i < n; i++) {
-    printf("%g, ", at(i));
+    printf("%g, ", (*this)(i));
   }
   printf("}\n");
 }
@@ -28,7 +28,7 @@ bool operator==(const vector& x, const vector& y)
     return false;
   }
   for (int i = 0; i < x.n; i++) {
-    if (x.at(i) != y.at(i)) {
+    if (x(i) != y(i)) {
       return false;
     }
   }

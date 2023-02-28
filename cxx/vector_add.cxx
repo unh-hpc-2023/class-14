@@ -8,6 +8,6 @@ void vector_add(const vector& x, const vector& y, vector& z)
   assert(x.n == y.n && x.n == z.n);
 
   for (int i = 0; i < x.n; i++) {
-    z.at(i) = x.at(i) + y.at(i);
+    z(i) = x(i) + y(i);
   }
 }

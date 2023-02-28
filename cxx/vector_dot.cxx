@@ -15,7 +15,7 @@ double vector_dot(const vector& x, const vector& y)
   double sum = 0.f;
   assert(x.n == y.n);
   for (int i = 0; i < x.n; i++) {
-    sum += x.at(i) * y.at(i);
+    sum += x(i) * y(i);
   }
   return sum;
 }
