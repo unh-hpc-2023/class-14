@@ -13,11 +13,11 @@ vector::~vector()
   // n = 0;
 }
 
-void vector_print(const vector& v)
+void vector::print() const
 {
   printf("{ ");
-  for (int i = 0; i < v.n; i++) {
-    printf("%g, ", v.at(i));
+  for (int i = 0; i < n; i++) {
+    printf("%g, ", at(i));
   }
   printf("}\n");
 }

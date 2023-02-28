@@ -17,11 +17,12 @@ struct vector
   double& at(int i) { return data[i]; }
   const double& at(int i) const { return data[i]; }
 
+  void print() const;
+
   double* data;
   int n;
 };
 
-void vector_print(const vector& v);
 bool vector_is_equal(const vector& x, const vector& y);
 
 double vector_dot(const vector& x, const vector& y);
