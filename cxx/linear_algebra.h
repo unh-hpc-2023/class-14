@@ -15,15 +15,15 @@ public:
   vector(int n);
   ~vector();
 
-  int size() const { return n; }
-  double& operator()(int i) { return data[i]; }
-  const double& operator()(int i) const { return data[i]; }
+  int size() const { return n_; }
+  double& operator()(int i) { return data_[i]; }
+  const double& operator()(int i) const { return data_[i]; }
 
   void print() const;
 
 private:
-  double* data;
-  int n;
+  double* data_;
+  int n_;
 };
 
 bool operator==(const vector& x, const vector& y);
