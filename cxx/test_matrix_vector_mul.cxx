@@ -17,8 +17,7 @@ int main(int argc, char** argv)
   for (int i = 0; i < x.n; i++) {
     VEC(x, i) = 1 + i;
   }
-  matrix A;
-  matrix_construct(A, N, N);
+  matrix A(N, N);
 
   for (int i = 0; i < N; i++) {
     MAT(A, i, i) = i + 1; // set diagonal
@@ -29,8 +28,6 @@ int main(int argc, char** argv)
 
   matrix_vector_mul(A, x, y);
   assert(vector_is_equal(y, y_ref));
-
-  matrix_destruct(A);
 
   return 0;
 }

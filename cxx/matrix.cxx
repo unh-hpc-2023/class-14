@@ -3,16 +3,13 @@
 
 #include <stdio.h>
 
-void matrix_construct(matrix& A, int n_rows, int n_cols)
-{
-  A.data = new double[n_rows * n_cols];
-  A.n_rows = n_rows;
-  A.n_cols = n_cols;
-}
+matrix::matrix(int n_rows_, int n_cols_)
+  : data(new double[n_rows_ * n_cols_]), n_rows(n_rows_), n_cols(n_cols_)
+{}
 
-void matrix_destruct(matrix& A)
+matrix::~matrix()
 {
-  delete[] A.data;
+  delete[] data;
   // The below isn't necessary, but may help make certain bugs more obvious.
   // A->data = NULL;
 }
