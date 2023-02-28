@@ -11,7 +11,7 @@
 
 void test_vector_add(int N)
 {
-  vector x(N), y(N), z(N), z_ref(N);
+  vector x(N), y(N), z_ref(N);
 
   for (int i = 0; i < N; i++) {
     x(i) = 1 + i;
@@ -19,7 +19,7 @@ void test_vector_add(int N)
     z_ref(i) = 3 + 2 * i;
   }
 
-  vector_add(x, y, z);
+  vector z = vector_add(x, y);
   assert(z == z_ref);
 }
 
