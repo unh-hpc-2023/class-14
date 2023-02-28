@@ -23,7 +23,7 @@ struct vector
   int n;
 };
 
-bool vector_is_equal(const vector& x, const vector& y);
+bool operator==(const vector& x, const vector& y);
 
 double vector_dot(const vector& x, const vector& y);
 void vector_add(const vector& x, const vector& y, vector& z);

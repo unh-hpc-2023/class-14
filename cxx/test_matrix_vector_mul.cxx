@@ -27,7 +27,7 @@ int main(int argc, char** argv)
   y_ref.at(0) += 2;  // adjust reference solution correspondingly
 
   matrix_vector_mul(A, x, y);
-  assert(vector_is_equal(y, y_ref));
+  assert(y == y_ref);
 
   return 0;
 }

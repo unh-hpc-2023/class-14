@@ -22,7 +22,7 @@ void vector::print() const
   printf("}\n");
 }
 
-bool vector_is_equal(const vector& x, const vector& y)
+bool operator==(const vector& x, const vector& y)
 {
   if (x.n != y.n) {
     return false;
