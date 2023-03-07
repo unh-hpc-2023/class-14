@@ -27,7 +27,7 @@ void test_vector_add(int N)
   vector_add(&x, &y, &z);
 
   printf("{");
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 4; i++) {
     printf(" %g", VEC(&z, i));
   }
   printf(" }\n");
