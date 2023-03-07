@@ -4,10 +4,15 @@
 
 #include <stdbool.h>
 
+#include <assert.h>
+
+// uncomment the following to enable bounds checking
+//#define BOUNDS_CHECK
+
 // struct vector
 //
-// encapsulates what makes up a vector -- how many elements it contains (n), as
-// well as the actual elements data[0] ... data[n-1]
+// encapsulates what makes up a vector -- how many elements it contains (n),
+// as well as the actual elements data[0] ... data[n-1]
 
 struct vector
 {
@@ -15,7 +20,15 @@ struct vector
   int n;
 };
 
+#ifdef BOUNDS_CHECK
+#define VEC(v, i)                                                              \
+  (*({                                                                         \
+    assert(i >= 0 && i < (v)->n);                                              \
+    &(v)->data[i];                                                             \
+  }))
+#else
 #define VEC(v, i) ((v)->data[i])
+#endif
 
 void vector_construct(struct vector* v, int n);
 void vector_destruct(struct vector* v);
@@ -33,7 +46,16 @@ struct matrix
   int n_cols;
 };
 
-#define MAT(A, i, j) (A)->data[(i) * (A)->n_cols + (j)]
+#ifdef BOUNDS_CHECK
+#define MAT(A, i, j)                                                           \
+  (*({                                                                         \
+    assert(i >= 0 && i < (A)->n_rows);                                         \
+    assert(j >= 0 && j < (A)->n_cols);                                         \
+    &(A)->data[i * (A)->n_cols + j];                                           \
+  }))
+#else
+#define MAT(A, i, j) ((A)->data[(i) * (A)->n_cols + (j)])
+#endif
 
 void matrix_construct(struct matrix* A, int n_rows, int n_cols);
 void matrix_destruct(struct matrix* A);

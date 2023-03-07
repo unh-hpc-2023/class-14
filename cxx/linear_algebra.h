@@ -2,8 +2,12 @@
 #ifndef LINEAR_ALGEBRA_H
 #define LINEAR_ALGEBRA_H
 
+#include <cassert>
 #include <stdbool.h>
 #include <vector>
+
+// uncomment the following to enable bounds checking
+//#define BOUNDS_CHECK
 
 // vector
 //
@@ -16,8 +20,20 @@ public:
   vector(int n);
 
   int size() const { return data_.size(); }
-  double& operator()(int i) { return data_[i]; }
-  const double& operator()(int i) const { return data_[i]; }
+  double& operator()(int i)
+  {
+#ifdef BOUNDS_CHECK
+    assert(i >= 0 && i < size());
+#endif
+    return data_[i];
+  }
+  const double& operator()(int i) const
+  {
+#ifdef BOUNDS_CHECK
+    assert(i >= 0 && i < size());
+#endif
+    return data_[i];
+  }
 
   void print() const;
 
@@ -37,9 +53,20 @@ public:
 
   int n_rows() const { return n_rows_; }
   int n_cols() const { return n_cols_; }
-  double& operator()(int i, int j) { return data_[i * n_cols_ + j]; }
+  double& operator()(int i, int j)
+  {
+#ifdef BOUNDS_CHECK
+    assert(i >= 0 && i < n_rows());
+    assert(j >= 0 && j < n_cols());
+#endif
+    return data_[i * n_cols_ + j];
+  }
   const double& operator()(int i, int j) const
   {
+#ifdef BOUNDS_CHECK
+    assert(i >= 0 && i < n_rows());
+    assert(j >= 0 && j < n_cols());
+#endif
     return data_[i * n_cols_ + j];
   }
 
