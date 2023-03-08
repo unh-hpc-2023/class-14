@@ -18,7 +18,7 @@ int main(int argc, char** argv)
   for (int i = 0; i < x.size(); i++) {
     x(i) = 1 + i;
   }
-  matrix A(N, N);
+  matrix A(xt::shape({N, N}));
 
   for (int i = 0; i < N; i++) {
     A(i, i) = i + 1; // set diagonal

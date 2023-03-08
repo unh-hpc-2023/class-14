@@ -1,6 +1,5 @@
 
-add_library(linalgcxx vector_dot.cxx matrix_vector_mul.cxx
-    matrix.cxx)
+add_library(linalgcxx vector_dot.cxx matrix_vector_mul.cxx)
 target_link_libraries(linalgcxx PUBLIC xtensor)
 
 add_executable(test_vector_dot_cxx test_vector_dot.cxx)
