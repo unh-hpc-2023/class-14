@@ -12,7 +12,8 @@
 int main(int argc, char** argv)
 {
   const int N = 3;
-  vector x(N), y_ref(N);
+  vector x(xt::shape({N}));
+  vector y_ref(xt::shape({N}));
 
   for (int i = 0; i < x.size(); i++) {
     x(i) = 1 + i;

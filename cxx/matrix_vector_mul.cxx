@@ -6,7 +6,7 @@
 vector dot(const matrix& A, const vector& x)
 {
   assert(A.n_cols() == x.size());
-  vector y(A.n_rows());
+  vector y(xt::shape({A.n_rows()}));
 
   for (int j = 0; j < y.size(); j++) {
     y(j) = 0.;

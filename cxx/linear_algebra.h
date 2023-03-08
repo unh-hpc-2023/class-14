@@ -3,48 +3,16 @@
 #define LINEAR_ALGEBRA_H
 
 #include <cassert>
-#include <stdbool.h>
 #include <vector>
+
+#include <xtensor/xtensor.hpp>
 
 // uncomment the following to enable bounds checking
 //#define BOUNDS_CHECK
 
-// vector
-//
-// encapsulates what makes up a vector -- how many elements it contains (n), as
-// well as the actual elements data[0] ... data[n-1]
-
-class vector
-{
-public:
-  vector(int n);
-
-  int size() const { return data_.size(); }
-  double& operator()(int i)
-  {
-#ifdef BOUNDS_CHECK
-    assert(i >= 0 && i < size());
-#endif
-    return data_[i];
-  }
-  const double& operator()(int i) const
-  {
-#ifdef BOUNDS_CHECK
-    assert(i >= 0 && i < size());
-#endif
-    return data_[i];
-  }
-
-  void print() const;
-
-private:
-  std::vector<double> data_;
-};
-
-bool operator==(const vector& x, const vector& y);
+using vector = xt::xtensor<double, 1>;
 
 double dot(const vector& x, const vector& y);
-vector operator+(const vector& x, const vector& y);
 
 class matrix
 {
